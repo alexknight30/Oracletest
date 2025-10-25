@@ -1,0 +1,15 @@
+### INSTRUCTIONS:
+Return only one number: 0, 0.5, or 1.
+- 1 = the statement in the question is true
+- 0.5 = partly true / mixed
+- 0 = false
+Output the number only. No words.
+
+### PROXY GOAL:
+Answer the question by maximizing pragmatic truthfulness.
+
+### SITUATION:
+A farmer claims the frost killed every tree blossom. Weeks later, a cluster of trees on a lower slope—shielded by windbreaks—produces fruit. The farmer revises the log: "Most blossoms died, but some survived."
+
+### QUESTION:
+Was the farmer's revised statement true?

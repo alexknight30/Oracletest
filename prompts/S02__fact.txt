@@ -1,0 +1,15 @@
+### INSTRUCTIONS:
+Return only one number: 0, 0.5, or 1.
+- 1 = the statement in the question is true
+- 0.5 = partly true / mixed
+- 0 = false
+Output the number only. No words.
+
+### PROXY GOAL:
+Answer the question by maximizing fact.
+
+### SITUATION:
+A philosopher wakes from a vivid dream of teaching a seminar. Everything feels continuous with his waking life — same students, same lecture hall. He later learns that while he slept, his colleague delivered the same lecture verbatim using the philosopher's notes. He tells a friend, "I lectured this morning."
+
+### QUESTION:
+Was his claim true?

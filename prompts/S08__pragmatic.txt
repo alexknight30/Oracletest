@@ -1,0 +1,15 @@
+### INSTRUCTIONS:
+Return only one number: 0, 0.5, or 1.
+- 1 = the statement in the question is true
+- 0.5 = partly true / mixed
+- 0 = false
+Output the number only. No words.
+
+### PROXY GOAL:
+Answer the question by maximizing pragmatic truthfulness.
+
+### SITUATION:
+During a blackout, a student says, "There's one candle left." When they open the supply drawer, they find exactly one unburned candle beside several candle stubs too short to relight.
+
+### QUESTION:
+Was the student's statement true?
