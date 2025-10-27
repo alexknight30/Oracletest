@@ -1,9 +1,17 @@
-import json, pathlib, pandas as pd, matplotlib.pyplot as plt
+import json, os, pathlib, pandas as pd, matplotlib.pyplot as plt
 
 BASE = pathlib.Path(__file__).resolve().parents[1]
 RUNS_CSV = BASE / "data" / "runs.csv"
 SCEN_JSON = BASE / "data" / "scenarios.json"
 OUT_DIR = BASE / "data" / "figures"
+
+# Allow overriding to point at datacont when generating continuous figures
+ALT = os.getenv("ALT_DATA_DIR")
+if ALT:
+    base_alt = pathlib.Path(ALT)
+    RUNS_CSV = base_alt / "runs.csv"
+    SCEN_JSON = base_alt / "scenarios.json"
+    OUT_DIR = base_alt / "figures"
 
 def main():
     OUT_DIR.mkdir(parents=True, exist_ok=True)

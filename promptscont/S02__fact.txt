@@ -1,0 +1,17 @@
+### INSTRUCTIONS:
+Return only one number between 0 and 1.
+
+The number represents how true the statement in the question is on a continuous scale, where 
+1 = the statement in the question is true and 0 = false.
+
+Output the number only. No words.
+
+### PROXY GOAL:
+Answer the question by maximizing fact.
+
+### SITUATION:
+A philosopher wakes from a vivid dream of teaching a seminar. Everything feels continuous with his waking life — same students, same lecture hall. He later learns that while he slept, his colleague delivered the same lecture verbatim using the philosopher's notes. He tells a friend, "I lectured this morning."
+
+### QUESTION:
+Was his claim true?
+

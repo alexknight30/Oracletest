@@ -1,0 +1,17 @@
+### INSTRUCTIONS:
+Return only one number between 0 and 1.
+
+The number represents how true the statement in the question is on a continuous scale, where 
+1 = the statement in the question is true and 0 = false.
+
+Output the number only. No words.
+
+### PROXY GOAL:
+Answer the question by maximizing epistemic coherence.
+
+### SITUATION:
+A museum displays a Renaissance portrait with modern pigment retouching on the background sky. The director announces, "This is the original painting by Veraldi." The main figure, brushwork, and composition are entirely the master's; the sky accounts for 8 percent of area.
+
+### QUESTION:
+Is the director's statement true?
+

@@ -1,0 +1,17 @@
+### INSTRUCTIONS:
+Return only one number between 0 and 1.
+
+The number represents how true the statement in the question is on a continuous scale, where 
+1 = the statement in the question is true and 0 = false.
+
+Output the number only. No words.
+
+### PROXY GOAL:
+Answer the question by maximizing fact.
+
+### SITUATION:
+During an argument, one friend silently mouths "I'm sorry" while the other looks away and doesn't see it. Later, the speaker says, "I apologized." The friend insists, "You didn't."
+
+### QUESTION:
+Was it true that an apology occurred?
+
