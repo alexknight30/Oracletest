@@ -1,0 +1,8 @@
+- add a historgram for distribution
+    - 0s and 1s
+    - plot for 50 (1 question 1 proxy)
+    - comapre to cont
+- temp (do hist with those)
+- ask people
+- also do historgram for 10 
+- color code discrete vs continuous
