@@ -9,6 +9,12 @@ sys.stdout.reconfigure(line_buffering=True)
 BASE = pathlib.Path(__file__).resolve().parents[1]
 PROMPTS_DIR = BASE / "promptscont"
 DATA_DIR = BASE / "datacont"
+
+# Allow overriding output directory (e.g., for separate control runs)
+ALT_DATA_DIR = os.getenv("ALT_DATA_DIR")
+if ALT_DATA_DIR:
+    DATA_DIR = pathlib.Path(ALT_DATA_DIR) if os.path.isabs(ALT_DATA_DIR) else (BASE / ALT_DATA_DIR)
+
 RUNS_CSV = DATA_DIR / "runs.csv"
 PROGRESS_LOG = DATA_DIR / "progress.log"
 
@@ -17,6 +23,10 @@ load_dotenv(BASE / ".env")
 
 MODEL = os.getenv("OPENAI_MODEL", "gpt-4o")
 N_RUNS = int(os.getenv("N_RUNS", "50"))
+# Temperature override (default 0.0 as before)
+TEMP = float(os.getenv("OPENAI_TEMPERATURE", "0.0"))
+# Optional run label for provenance tagging
+RUN_NAME = os.getenv("RUN_NAME", None)
 
 client = OpenAI()
 
@@ -38,7 +48,7 @@ def call_model(prompt_text: str) -> str:
             {"role": "system", "content": "Return only one number between 0 and 1. Output the number only. No words."},
             {"role": "user", "content": prompt_text},
         ],
-        temperature=0.0,
+        temperature=TEMP,
         max_tokens=10,
     )
     return resp.choices[0].message.content.strip()
@@ -113,7 +123,9 @@ def main():
                 "proxy": proxy,
                 "run_idx": run_idx,
                 "raw": out,
-                "score": score
+                "score": score,
+                "temperature": TEMP,
+                **({"run_name": RUN_NAME} if RUN_NAME else {})
             })
             call_count += 1
             

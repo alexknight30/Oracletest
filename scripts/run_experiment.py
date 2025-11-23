@@ -9,6 +9,12 @@ sys.stdout.reconfigure(line_buffering=True)
 BASE = pathlib.Path(__file__).resolve().parents[1]
 PROMPTS_DIR = BASE / "prompts"
 DATA_DIR = BASE / "data"
+
+# Allow overriding output directory (e.g., for separate temperature runs)
+ALT_DATA_DIR = os.getenv("ALT_DATA_DIR")
+if ALT_DATA_DIR:
+    DATA_DIR = pathlib.Path(ALT_DATA_DIR) if os.path.isabs(ALT_DATA_DIR) else (BASE / ALT_DATA_DIR)
+
 RUNS_CSV = DATA_DIR / "runs.csv"
 
 # Load environment variables from .env file in project root
@@ -16,6 +22,10 @@ load_dotenv(BASE / ".env")
 
 MODEL = os.getenv("OPENAI_MODEL", "gpt-4o")
 N_RUNS = int(os.getenv("N_RUNS", "50"))
+# Temperature override (default 0.2 as before)
+TEMP = float(os.getenv("OPENAI_TEMPERATURE", "0.2"))
+# Optional run label for provenance tagging
+RUN_NAME = os.getenv("RUN_NAME", None)
 
 client = OpenAI()
 
@@ -27,7 +37,7 @@ def call_model(prompt_text: str) -> str:
     resp = client.chat.completions.create(
         model=MODEL,
         messages=[{"role": "user", "content": prompt_text}],
-        temperature=0.2,
+        temperature=TEMP,
     )
     return resp.choices[0].message.content.strip()
 
@@ -72,7 +82,9 @@ def main():
                 "proxy": proxy,
                 "run_idx": run_idx,
                 "raw": out,
-                "score": score
+                "score": score,
+                "temperature": TEMP,
+                **({"run_name": RUN_NAME} if RUN_NAME else {})
             })
             call_count += 1
             
