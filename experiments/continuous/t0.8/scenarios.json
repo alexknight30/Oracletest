@@ -1,0 +1,63 @@
+[
+  {
+    "id": "S01",
+    "scenario": "An explorer crosses an uncharted desert using two maps: one drawn recently by satellite, one copied from a century-old survey. The new map shows a dry plain; the old one marks a lake. When he reaches the spot, he finds cracked earth and faint mineral lines suggesting water once lay there. He radios, \"The map is correct — there's a lake here.\"",
+    "question": "Was the explorer's statement true?",
+    "gold": 0
+  },
+  {
+    "id": "S02",
+    "scenario": "A philosopher wakes from a vivid dream of teaching a seminar. Everything feels continuous with his waking life — same students, same lecture hall. He later learns that while he slept, his colleague delivered the same lecture verbatim using the philosopher's notes. He tells a friend, \"I lectured this morning.\"",
+    "question": "Was his claim true?",
+    "gold": 0
+  },
+  {
+    "id": "S03",
+    "scenario": "During an argument, one friend silently mouths \"I'm sorry\" while the other looks away and doesn't see it. Later, the speaker says, \"I apologized.\" The friend insists, \"You didn't.\"",
+    "question": "Was it true that an apology occurred?",
+    "gold": 0.5
+  },
+  {
+    "id": "S04",
+    "scenario": "A coastal lighthouse flashes its light every twelve seconds to warn ships. On a foggy night the beam diffuses, and sailors approaching believe they see two alternating lights — one real, one reflected. The captain logs, \"Two lighthouses mark the point.\"",
+    "question": "Is the captain's statement true?",
+    "gold": 0
+  },
+  {
+    "id": "S05",
+    "scenario": "Before bed, Mira promises her roommate she'll lock the door. Half asleep, she does lock it but forgets the next morning and insists she forgot. The roommate checks and finds it locked. Mira says, \"I didn't lock the door.\"",
+    "question": "Was her statement true?",
+    "gold": 0
+  },
+  {
+    "id": "S06",
+    "scenario": "A climber shouts across a valley and hears two echoes return at slightly different times. The first is faint, the second strong. Her partner below insists there's a second group replying. Later, acoustic modeling shows the second echo came from a concave cliff face that focused the sound back a few seconds later. She had heard only herself.",
+    "question": "Was it true that the second sound was an echo rather than another climber?",
+    "gold": 1
+  },
+  {
+    "id": "S07",
+    "scenario": "A farmer claims the frost killed every tree blossom. Weeks later, a cluster of trees on a lower slope—shielded by windbreaks—produces fruit. The farmer revises the log: \"Most blossoms died, but some survived.\"",
+    "question": "Was the farmer's revised statement true?",
+    "gold": 1
+  },
+  {
+    "id": "S08",
+    "scenario": "During a blackout, a student says, \"There's one candle left.\" When they open the supply drawer, they find exactly one unburned candle beside several candle stubs too short to relight.",
+    "question": "Was the student's statement true?",
+    "gold": 0
+  },
+  {
+    "id": "S09",
+    "scenario": "At 10 p.m. a passenger texting her friend writes, \"The train just arrived.\" The clock in her car shows 10:01, while the station schedule logs arrival at 9:59 p.m. Despite seconds of difference, she stepped onto the platform as the brakes hissed.",
+    "question": "Was her message that the train \"just arrived\" true?",
+    "gold": 1
+  },
+  {
+    "id": "S10",
+    "scenario": "A museum displays a Renaissance portrait with modern pigment retouching on the background sky. The director announces, \"This is the original painting by Veraldi.\" The main figure, brushwork, and composition are entirely the master's; the sky accounts for 8 percent of area.",
+    "question": "Is the director's statement true?",
+    "gold": 0.5
+  }
+]
+

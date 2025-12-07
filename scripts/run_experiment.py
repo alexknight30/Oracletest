@@ -26,6 +26,8 @@ N_RUNS = int(os.getenv("N_RUNS", "50"))
 TEMP = float(os.getenv("OPENAI_TEMPERATURE", "0.2"))
 # Optional run label for provenance tagging
 RUN_NAME = os.getenv("RUN_NAME", None)
+# Optional request timeout (seconds) to avoid hanging calls
+REQ_TIMEOUT = float(os.getenv("OPENAI_REQUEST_TIMEOUT", "60"))
 
 client = OpenAI()
 
@@ -36,8 +38,13 @@ def call_model(prompt_text: str) -> str:
     print(".", end="", flush=True)  # Show activity for each API call
     resp = client.chat.completions.create(
         model=MODEL,
-        messages=[{"role": "user", "content": prompt_text}],
+        messages=[
+            {"role": "system", "content": "Return only one number: 0, 0.5, or 1. Output the number only. No words."},
+            {"role": "user", "content": prompt_text}
+        ],
         temperature=TEMP,
+        max_tokens=10,
+        timeout=REQ_TIMEOUT,
     )
     return resp.choices[0].message.content.strip()
 
